@@ -15,15 +15,16 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
         SceneManager.sceneLoaded += OnLevelLoaded;
     }
-    private void Start()
+    public void StartGame()
     {
+        SceneManager.LoadSceneAsync("Levels");
         NewGame();
     }
+        
     private void NewGame()
     {
         this.score = 0;
         this.lives = 3;
-        LoadLevel(1);
     }
     private void LoadLevel(int level)
     {
